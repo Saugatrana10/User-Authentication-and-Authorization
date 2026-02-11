@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+{%for message in messages %}
+<div class="alert alert-dismissible alert-primary">
+  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>{{ message }}</strong>
+</div>
+{% endfor %}
+<div class="container">
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+       {{form.as_p}}
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a>.</p>
+</div>
+{% endblock %}

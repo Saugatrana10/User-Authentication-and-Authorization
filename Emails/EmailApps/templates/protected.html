@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Protected Page</h2>
+<p>This page is protected and only accessible to authenticated users.</p>
+<p>Welcome, {{ user.username }}! You have successfully accessed the protected page.</p>
+
+<p>See the list of currently logged-in users: <a href="{% url 'list' %}">View Logged-in Users</a></p>
+
+{% endblock %}
